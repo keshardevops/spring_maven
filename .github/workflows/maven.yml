@@ -37,6 +37,9 @@ jobs:
       run:
         |
         pwd
+        cd /home
+        cd ..
+        pwd
         ls -ltr
         cd complete/target
         ls -lrt
