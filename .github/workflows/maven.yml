@@ -38,11 +38,19 @@ jobs:
         |
         cd complete/target
         ls -lrt
+        pwd
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
           name: gs-maven-0.1.0.jar 
-          path: complete/target         
+          path: complete/target  
+    - name: Download Artifact
+      uses: actions/download-artifact@v4
+        with:
+          name: gs-maven-0.1.0.jar 
+          path: /tmp  
+    - name: List Downloaded Files (Optional)
+      run: ls -R 
     - name: Publish to GitHub Packages
       run: |
           mvn deploy:gs-maven-0.1.0.jar \
@@ -50,7 +58,7 @@ jobs:
             -DartifactId=gs-maven-0.1.0.jar \
             -Dversion=1.2.0 \
             -Dpackaging=jar \
-            -Dfile=complete/target/gs-maven-0.1.0.jar \
+            -Dfile=/tmp/gs-maven-0.1.0.jar \
             -DrepositoryId=github \
             -Durl=https:https://github.com/keshardevops?tab=packages&repo_name=spring_maven
           env:
