@@ -36,9 +36,10 @@ jobs:
     - name: view Maven build file
       run:
         |
+        pwd
+        ls -ltr
         cd complete/target
         ls -lrt
-        pwd
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
