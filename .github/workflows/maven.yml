@@ -51,7 +51,7 @@ jobs:
         mkdir /home/runner/work/spring_maven/spring_maven/kkp
         cd /home/runner/work/spring_maven/spring_maven/kkp/
         pwd
-        ls -lrt
+        ls
     - name: Download Artifact
       uses: actions/download-artifact@v4
       with:
@@ -65,7 +65,7 @@ jobs:
         ls -ltr
     - name: Publish to GitHub Packages
       run: |
-          mvn deploy:gs-maven-0.1.0.jar \
+          mvn deploy:/home/runner/work/spring_maven/spring_maven/kkp/gs-maven-0.1.0.jar \
             -DgroupId=com.jar \
             -DartifactId=gs-maven-0.1.0.jar \
             -Dversion=1.2.0 \
