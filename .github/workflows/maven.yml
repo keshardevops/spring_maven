@@ -33,6 +33,9 @@ jobs:
         mvn -v
         mvn install --file initial/pom.xml
         mvn -B package --file complete/pom.xml
-      
-
-  
+    - name: Build with Maven
+      run:
+        |
+        cd /complete/target
+        ls -l 
+         
