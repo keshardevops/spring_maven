@@ -60,6 +60,7 @@ jobs:
     - name: List Downloaded Files (Optional)
       run:
         |
+        cd /home/runner/work/spring_maven/spring_maven/kkp/
         pwd
         ls -ltr
     - name: Publish to GitHub Packages
