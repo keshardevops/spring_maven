@@ -46,7 +46,7 @@ jobs:
           path: complete/target  
     - name: Download Artifact
       uses: actions/download-artifact@v4
-        with:
+      with:
           name: gs-maven-0.1.0.jar 
           path: /tmp  
     - name: List Downloaded Files (Optional)
