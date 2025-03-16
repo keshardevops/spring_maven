@@ -48,14 +48,15 @@ jobs:
         |
         cd /home
         cd ..
-        mkdir kkp
+        mkdir /home/runner/work/spring_maven/spring_maven/kkp
+        cd /home/runner/work/spring_maven/spring_maven/kkp/
         pwd
         ls -lrt
     - name: Download Artifact
       uses: actions/download-artifact@v4
       with:
           name: gs-maven-0.1.0.jar 
-          path: kkp  
+          path: /home/runner/work/spring_maven/spring_maven/kkp/  
     - name: List Downloaded Files (Optional)
       run:
         |
@@ -68,7 +69,7 @@ jobs:
             -DartifactId=gs-maven-0.1.0.jar \
             -Dversion=1.2.0 \
             -Dpackaging=jar \
-            -Dfile=kkp/gs-maven-0.1.0.jar \
+            -Dfile=/home/runner/work/spring_maven/spring_maven/kkp/gs-maven-0.1.0.jar \
             -DrepositoryId=github \
             -Durl=https:https://github.com/keshardevops?tab=packages&repo_name=spring_maven
           env:
