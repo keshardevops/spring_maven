@@ -43,22 +43,24 @@ jobs:
       with:
           name: gs-maven-0.1.0.jar 
           path: complete/target  
-    - name: view Maven build file
+    - name: folder creation
       run:
         |
-        cd /tmp
+        cd /home
+        cd ..
+        mkdir download
+        pwd
         ls -lrt
     - name: Download Artifact
       uses: actions/download-artifact@v4
       with:
           name: gs-maven-0.1.0.jar 
-          path: /tmp  
+          path: download  
     - name: List Downloaded Files (Optional)
       run:
         |
-        ls -R
-        ls -ltr
         pwd
+        ls -ltr
     - name: Publish to GitHub Packages
       run: |
           mvn deploy:gs-maven-0.1.0.jar \
@@ -66,7 +68,7 @@ jobs:
             -DartifactId=gs-maven-0.1.0.jar \
             -Dversion=1.2.0 \
             -Dpackaging=jar \
-            -Dfile=/tmp/gs-maven-0.1.0.jar \
+            -Dfile=download/gs-maven-0.1.0.jar \
             -DrepositoryId=github \
             -Durl=https:https://github.com/keshardevops?tab=packages&repo_name=spring_maven
           env:
