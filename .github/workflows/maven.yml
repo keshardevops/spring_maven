@@ -46,10 +46,10 @@ jobs:
     - name: Publish to GitHub Packages
       run: |
           mvn deploy:gs-maven-0.1.0.jar \
-            -DgroupId=com.example \
-            -DartifactId=sample \
-            -Dversion=1.0.0 \
-            -Dpackaging=txt \
+            -DgroupId=com.jar \
+            -DartifactId=gs-maven-0.1.0.jar \
+            -Dversion=1.2.0 \
+            -Dpackaging=jar \
             -Dfile=complete/target/gs-maven-0.1.0.jar \
             -DrepositoryId=github \
             -Durl=https:https://github.com/keshardevops?tab=packages&repo_name=spring_maven
