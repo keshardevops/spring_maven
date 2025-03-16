@@ -36,6 +36,5 @@ jobs:
     - name: Build with Maven
       run:
         |
-        cd /complete/target
-        ls -l 
+        ls -lrt 
          
