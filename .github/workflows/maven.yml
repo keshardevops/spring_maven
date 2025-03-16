@@ -36,11 +36,6 @@ jobs:
     - name: view Maven build file
       run:
         |
-        pwd
-        cd /home
-        cd ..
-        pwd
-        ls -ltr
         cd complete/target
         ls -lrt
     - name: Upload Artifact
@@ -48,13 +43,22 @@ jobs:
       with:
           name: gs-maven-0.1.0.jar 
           path: complete/target  
+    - name: view Maven build file
+      run:
+        |
+        cd /tmp
+        ls -lrt
     - name: Download Artifact
       uses: actions/download-artifact@v4
       with:
           name: gs-maven-0.1.0.jar 
           path: /tmp  
     - name: List Downloaded Files (Optional)
-      run: ls -R 
+      run:
+        |
+        ls -R
+        ls -ltr
+        pwd
     - name: Publish to GitHub Packages
       run: |
           mvn deploy:gs-maven-0.1.0.jar \
