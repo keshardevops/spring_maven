@@ -40,6 +40,6 @@ jobs:
         ls -lrt
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
-        with:
+      with:
           name: gs-maven-0.1.0.jar 
           path: complete/target         
