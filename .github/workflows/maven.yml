@@ -65,13 +65,6 @@ jobs:
         ls -ltr
     - name: Publish to GitHub Packages
       run: |
-        mvn deploy:/home/runner/work/spring_maven/spring_maven/artifact/gs-maven-0.1.0.jar \
-           -DgroupId=com.jar \
-           -DartifactId=gs-maven-0.1.0.jar \
-           -Dversion=1.2.0 \
-           -Dpackaging=jar \
-           -Dfile=/home/runner/work/spring_maven/spring_maven/artifact/gs-maven-0.1.0.jar \
-           -DrepositoryId=github \
-           -Durl=https://github.com/keshardevops?tab=packages&repo_name=spring_maven
+        mvn deploy
           env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
