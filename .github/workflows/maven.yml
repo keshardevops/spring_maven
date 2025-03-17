@@ -63,3 +63,5 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: target/gs-maven-0.1.0.jar  
         asset_name: gs-maven-0.1.0.jar
+        asset_content_type: application/java-archive
+
