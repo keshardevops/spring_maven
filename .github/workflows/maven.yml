@@ -48,8 +48,8 @@ jobs:
         |
         cd /home
         cd ..
-        mkdir /home/runner/work/spring_maven/spring_maven/kkp
-        cd /home/runner/work/spring_maven/spring_maven/kkp/
+        mkdir /home/runner/work/spring_maven/spring_maven/artifact
+        cd /home/runner/work/spring_maven/spring_maven/artifact/
         pwd
         ls
     - name: Download Artifact
@@ -65,6 +65,6 @@ jobs:
         ls -ltr
     - name: Publish to GitHub Packages
       run: |
-        cp ./artifact/gs-maven-0.1.0.jar https://github.com/keshardevops?tab=packages&repo_name=spring_maven/
+        cp /home/runner/work/spring_maven/spring_maven/artifact/gs-maven-0.1.0.jar  https://github.com/keshardevops/gcp-jenkins-demo/packages/
           env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
