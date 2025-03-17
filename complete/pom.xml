@@ -12,6 +12,21 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	<distributionManagement>
+    <repository>
+        <id>github</id>
+        <url>https://github.com/keshardevops?tab=packages&repo_name=spring_maven
+</url>
+    </repository>
+</distributionManagement>
+
+<servers>
+    <server>
+        <id>github</id>
+        <username>${env.GITHUB_ACTOR}</username>
+        <password>${env.GITHUB_TOKEN}</password>
+    </server>
+</servers>
 
 	<dependencies>
 		<!-- tag::joda[] -->
